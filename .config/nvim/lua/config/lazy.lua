@@ -15,6 +15,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  { "catppuccin/nvim", as = "catppuccin" },
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
@@ -51,3 +52,5 @@ require("lazy").setup({
     },
   },
 })
+
+vim.cmd("colorscheme catppuccin")
