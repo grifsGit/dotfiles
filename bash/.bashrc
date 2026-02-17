@@ -7,6 +7,9 @@
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias fvim='nvim $(fzf -m --preview="bat --color=always {}")'
+
 PS1='[\u@\h \W]\$ '
 
 eval "$(starship init bash)"
+eval "$(fzf --bash)"
