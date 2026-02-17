@@ -8,7 +8,7 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 #alias fvim='nvim $(fzf -m --preview="bat --color=always {}")'
-alias fvim='selected=$(fzf -m --preview="bat --color=always {}") && [-n "$selected"] && nvim "$selected"'
+alias fvim='selected=$(fzf -m --preview="bat --color=always {}") && [ -n "$selected" ] && nvim "$selected"'
 
 PS1='[\u@\h \W]\$ '
 
