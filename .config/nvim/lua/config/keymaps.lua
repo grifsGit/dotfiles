@@ -3,5 +3,8 @@
 -- Add any additional keymaps here
 
 -- Center on line after paging
--- nnoremap("<C-d>", "<C-d>zz")
--- nnoremap("<C-u>", "<C-u>zz")
+vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true })
+
+-- Extra keybind for normal mode
+vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = false })
