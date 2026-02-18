@@ -8,3 +8,7 @@ vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true
 
 -- Extra keybind for normal mode
 vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = false })
+
+-- Extra keybind for <C-d> and <C-u>
+vim.api.nvim_set_keymap("n", "<C-j>", "<C-d>", { noremap = false })
+vim.api.nvim_set_keymap("n", "<C-k>", "<C-u>", { noremap = false })
