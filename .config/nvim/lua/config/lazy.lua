@@ -55,4 +55,4 @@ require("lazy").setup({
 
 -- vim.cmd("colorscheme catppuccin")
 -- catppuccin, laserwave, cursor-dark
-vim.cmd("colorscheme laserwave-hi_c")
+vim.cmd("colorscheme catppuccin")
