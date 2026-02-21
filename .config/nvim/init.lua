@@ -6,6 +6,7 @@ vim.o.signcolumn = "yes"
 vim.o.scrolloff = 10
 vim.o.sidescrolloff = 8
 vim.o.cursorline = true
+vim.o.clipboard = "unnamedplus"
 
 -- Indentation
 vim.o.tabstop = 2
@@ -21,8 +22,9 @@ vim.keymap.set('n', '<leader>rc', ':e $MYVIMRC<CR> :source<CR>', { desc = "Open 
 vim.keymap.set('n', '<leader>w', ':write<CR>', { desc = "Write" })
 vim.keymap.set('n', '<leader>q', ':quit<CR>', { desc = "Quit" })
 
-vim.keymap.set({'n', 'v', 'x'}, '<leader>y', '"+y<CR>', { desc = "Yank to paste buffer" })
-vim.keymap.set({'n', 'v', 'x'}, '<leader>d', '"+d<CR>', { desc = "Delete to paste buffer" })
+-- vim.keymap.set({'n', 'v'}, '<leader>y', '"+y<CR>', { desc = "Yank to system buffer" })
+-- vim.keymap.set({'n', 'v'}, '<leader>d', '"+d<CR>', { desc = "Delete to system buffer" })
+-- vim.keymap.set({'n', 'v'}, '<leader>p', '"+p<CR>', { desc = "Paste from system buffer" })
 vim.keymap.set('i', 'jj', '<Esc>', { noremap = true }, { desc = "jj mapped to Escape" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true }, { desc = "Center on page down" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true }, { desc = "Center on page up" })
@@ -46,8 +48,11 @@ vim.cmd("colorscheme catppuccin")
 vim.o.showmatch = true
 
 -- Functions
+local augroup = vim.api.nvim_create_augroup("UserConfig", {})
+
 vim.api.nvim_create_autocmd("TextYankPost", { -- Highlight on yank
-		callback = function()
-				vim.highlight.on_yank()
-		end,
+	group = augroup,
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 }) 
