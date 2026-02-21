@@ -14,7 +14,9 @@ vim.keymap.set('n', '<leader>q', ':quit<CR>')
 
 vim.keymap.set({'n', 'v', 'x'}, '<leader>y', '"+y<CR>')
 vim.keymap.set({'n', 'v', 'x'}, '<leader>d', '"+d<CR>')
-vim.keymap.set('i', 'jj', '<Esc>')
+vim.keymap.set('i', 'jj', '<Esc>', { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true })
 
 --Packages
 vim.pack.add({
