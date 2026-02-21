@@ -22,9 +22,6 @@ vim.keymap.set('n', '<leader>rc', ':e $MYVIMRC<CR> :source<CR>', { desc = "Open 
 vim.keymap.set('n', '<leader>w', ':write<CR>', { desc = "Write" })
 vim.keymap.set('n', '<leader>q', ':quit<CR>', { desc = "Quit" })
 
--- vim.keymap.set({'n', 'v'}, '<leader>y', '"+y<CR>', { desc = "Yank to system buffer" })
--- vim.keymap.set({'n', 'v'}, '<leader>d', '"+d<CR>', { desc = "Delete to system buffer" })
--- vim.keymap.set({'n', 'v'}, '<leader>p', '"+p<CR>', { desc = "Paste from system buffer" })
 vim.keymap.set('i', 'jj', '<Esc>', { noremap = true }, { desc = "jj mapped to Escape" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true }, { desc = "Center on page down" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true }, { desc = "Center on page up" })
