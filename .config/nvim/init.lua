@@ -5,10 +5,12 @@ vim.o.wrap = false
 vim.o.signcolumn = "yes"
 vim.o.tabstop = 2
 vim.o.swapfile = false
+vim.o.cursorline = true
 
 -- Vim keybinds
 vim.g.mapleader = " "
-vim.keymap.set('n', '<leader>o', ':update<CR> :source<CR>')
+vim.keymap.set('n', '<leader>rl', ':update<CR> :source<CR>')
+vim.keymap.set('n', '<leader>rc', ':e $MYVIMRC<CR> :source<CR>')
 vim.keymap.set('n', '<leader>w', ':write<CR>')
 vim.keymap.set('n', '<leader>q', ':quit<CR>')
 
@@ -35,3 +37,4 @@ vim.keymap.set('n', '<leader>e', ":Oil<CR>")
 
 --Appearance
 vim.cmd("colorscheme catppuccin")
+vim.o.showmatch = true
