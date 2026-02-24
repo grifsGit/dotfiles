@@ -15,25 +15,27 @@ vim.o.smartindent = true
 vim.o.autoindent = true
 vim.o.swapfile = false
 
--- Vim keybinds
+-- Console keybinds
 vim.g.mapleader = " "
 vim.keymap.set('n', '<leader>rl', ':update<CR> :source<CR>', { desc = "Source" })
 vim.keymap.set('n', '<leader>rc', ':e $MYVIMRC<CR> :source<CR>', { desc = "Open Init.lua" })
 vim.keymap.set('n', '<leader>w', ':write<CR>', { desc = "Write" })
 vim.keymap.set('n', '<leader>q', ':quit<CR>', { desc = "Quit" })
-
 vim.keymap.set('i', 'jj', '<Esc>', { noremap = true }, { desc = "jj mapped to Escape" })
+vim.keymap.set('n', '<leader>e', ":Explore<CR>", { desc = "Open file explorer" })
+
+-- Centering keybinds
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true }, { desc = "Center on page down" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true }, { desc = "Center on page up" })
 vim.keymap.set('n', 'n', 'nzzzv', { desc = "Center on next" })
 vim.keymap.set('n', 'N', 'Nzzzv', { desc = "Center on previous" })
 
+-- Moving lines/paragraphs keybinds
 vim.keymap.set('n', '<A-j>', ":m .+1<CR>==", { desc = "Move line down" })
 vim.keymap.set('n', '<A-k>', ":m .-2<CR>==", { desc = "Move line up" })
 vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", { desc = "Move line down" })
 
-vim.keymap.set('n', '<leader>e', ":Explore<CR>", { desc = "Open file explorer" })
 
 --Packages
 vim.pack.add({
